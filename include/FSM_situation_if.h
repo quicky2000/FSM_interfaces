@@ -14,7 +14,9 @@ class FSM_situation_if
   virtual FSM_context_if* getCurrentContext(void)const=0;
   virtual string toString(void)const=0;
   virtual string getUniqueId(void)const=0;
-  
+  virtual bool isValid(void)const=0;
+  virtual void setInvalid(void)=0;
+
   // Virtual destructor
   virtual ~FSM_situation_if(void);
 };
