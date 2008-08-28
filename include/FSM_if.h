@@ -4,6 +4,7 @@
 
 #include <string>
 #include <map>
+#include <vector>
 
 class FSM_situation_if;
 
