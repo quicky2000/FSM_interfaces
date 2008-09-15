@@ -7,6 +7,7 @@
 #include <vector>
 
 class FSM_situation_if;
+class FSM_weighted_transition_index_if;
 
 /**
    Class defining FSM public interface
@@ -22,6 +23,7 @@ class FSM_if
   virtual void configure(void)=0;
   virtual std::string toString(void)const=0;
   virtual std::string getFsmName(void)const=0;
+  virtual void computeTransitionWeights(std::vector<FSM_weighted_transition_index_if*> &p_vector)const=0;
 
   //Virtual destructor
   virtual ~FSM_if(void);
