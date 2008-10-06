@@ -16,6 +16,7 @@ class FSM_situation_if
   virtual string getUniqueId(void)const=0;
   virtual bool isValid(void)const=0;
   virtual void setInvalid(void)=0;
+  virtual bool isFinal(void)const=0;
 
   // Virtual destructor
   virtual ~FSM_situation_if(void);

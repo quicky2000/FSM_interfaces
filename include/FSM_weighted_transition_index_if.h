@@ -12,7 +12,7 @@ class FSM_weighted_transition_index_if
   virtual std::string getString(void)const=0;
   virtual bool operator<(const FSM_weighted_transition_index_if &p_object2)const=0;
 
-virtual ~FSM_weighted_transition_index_if(void);
+  virtual ~FSM_weighted_transition_index_if(void);
 
  private:
   
