@@ -17,6 +17,7 @@ class FSM_situation_if
   virtual bool isValid(void)const=0;
   virtual void setInvalid(void)=0;
   virtual bool isFinal(void)const=0;
+  virtual bool less(const FSM_situation_if *p_object2)const=0;
 
   // Virtual destructor
   virtual ~FSM_situation_if(void);
