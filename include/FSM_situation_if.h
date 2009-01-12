@@ -13,7 +13,7 @@ class FSM_situation_if
   // Methods to implement
   virtual FSM_context_if* getCurrentContext(void)const=0;
   virtual string toString(void)const=0;
-  virtual string getUniqueId(void)const=0;
+  virtual string getStringId(void)const=0;
   virtual bool isValid(void)const=0;
   virtual void setInvalid(void)=0;
   virtual bool isFinal(void)const=0;
