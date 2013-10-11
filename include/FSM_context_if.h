@@ -15,6 +15,7 @@ class FSM_context_if
 		virtual string toString(void)const=0;
 		virtual unsigned int getNbTransitions(void)const=0;
 		virtual FSM_transition_if* getTransition(unsigned int p_index)const=0;
+		virtual bool transitionsComputed(void)const=0;
 
 		// Virtual destructor
 		virtual ~FSM_context_if(void);
