@@ -3,23 +3,27 @@
 
 #include <string>
 #include <map>
-using namespace std;
 
-class FSM_situation_if;
-
-class FSM_UI_if
+namespace FSM_interfaces
 {
-	public:
-		// Methods to implement
-		virtual void displaySituation(const FSM_situation_if *p_situation)=0;
-		virtual string toString(void)const=0;
+  class FSM_situation_if;
 
-		// Virtual destructor
-		virtual ~FSM_UI_if(void);
-};
+  class FSM_UI_if
+  {
+  public:
+    // Methods to implement
+    virtual void display_situation(const FSM_situation_if & p_situation)=0;
+    virtual const std::string & get_class_name(void)const=0;
+  
+    // Virtual destructor
+    inline virtual ~FSM_UI_if(void){}
+  };
 
-typedef FSM_UI_if *(*FSM_UI_creator)();
+  typedef FSM_UI_if & (*FSM_UI_creator_t)();
 
-void registerFsmUi(string p_fsm_name,FSM_UI_creator p_creator,map<string,FSM_UI_creator> *p_factory);
-
+  void register_fsm_ui(const std::string & p_fsm_name,
+		       FSM_UI_creator_t p_creator,
+		       std::map<std::string,FSM_UI_creator_t> & p_factory);
+}
 #endif
+//EOF

@@ -2,22 +2,27 @@
 #ifndef _FSM_CONTEXT_IF_
 #define _FSM_CONTEXT_IF_
 
+#include "FSM_types.h"
 #include <string>
 #include <vector>
-using namespace std;
 
-class FSM_transition_if;
-
-class FSM_context_if
+namespace FSM_interfaces
 {
-	public:
-		// Methods to implement
-		virtual string toString(void)const=0;
-		virtual unsigned int getNbTransitions(void)const=0;
-		virtual FSM_transition_if* getTransition(unsigned int p_index)const=0;
-		virtual bool transitionsComputed(void)const=0;
+  class FSM_transition_if;
 
-		// Virtual destructor
-		virtual ~FSM_context_if(void);
-};
+  class FSM_context_if
+  {
+  public:
+    // Methods to implement
+    virtual const std::string to_string(void)const=0;
+    virtual void to_string(std::string &)const=0;
+    virtual const FSM_types::transition_index_t get_nb_transitions(void)const=0;
+    virtual const FSM_transition_if & get_transition(const FSM_types::transition_index_t &)const=0;
+    virtual bool transitions_computed(void)const=0;
+
+    // Virtual destructor
+    inline ~FSM_context_if(void){};
+  };
+}
 #endif
+//EOF
