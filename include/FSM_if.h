@@ -41,6 +41,7 @@ namespace FSM_interfaces
     virtual void compute_transitions(void)=0;
     virtual void select_transition(const FSM_types::transition_index_t & p_transition_index)=0;
     virtual void apply_transition(const FSM_types::transition_index_t & p_transition_index)=0;
+    virtual void revert(void)=0;
     virtual void configure(void)=0;
     virtual const std::string & get_class_name(void)const=0;
     virtual const std::string & get_fsm_name(void)const=0;
