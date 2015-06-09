@@ -35,7 +35,7 @@ namespace FSM_interfaces
     virtual const FSM_types::transition_index_t get_nb_transitions(void)const=0;
     virtual const FSM_transition_if & get_transition(const FSM_types::transition_index_t &)const=0;
     virtual bool transitions_computed(void)const=0;
-
+    virtual void remove_transitions(void)=0;
     // Virtual destructor
     inline ~FSM_context_if(void){};
   };
