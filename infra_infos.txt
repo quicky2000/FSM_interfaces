@@ -1,3 +1,4 @@
 depend:
 LDFLAGS:
 CFLAGS:
+env_variables:
