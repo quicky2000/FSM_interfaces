@@ -62,7 +62,7 @@ class FSM_context: public FSM_interfaces::FSM_context_if
         p_string = "";
     }
 
-    const FSM_interfaces::FSM_types::transition_index_t
+    FSM_interfaces::FSM_types::transition_index_t
     get_nb_transitions(void) const override
     {
         return 0;

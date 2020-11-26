@@ -32,7 +32,7 @@ namespace FSM_interfaces
     // Methods to implement
     virtual const std::string to_string(void)const=0;
     virtual void to_string(std::string &)const=0;
-    virtual const FSM_types::transition_index_t get_nb_transitions(void)const=0;
+    virtual FSM_types::transition_index_t get_nb_transitions(void)const=0;
     virtual const FSM_transition_if & get_transition(const FSM_types::transition_index_t &)const=0;
     virtual bool transitions_computed(void)const=0;
     virtual void remove_transitions(void)=0;
