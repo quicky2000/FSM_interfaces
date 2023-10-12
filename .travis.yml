@@ -24,7 +24,10 @@ before_install:
   - cd build
 
 script:
-  - generate_makefile FSM_interfaces
-  - make test
-  - ./bin/FSM_interfaces.exe
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then generate_makefile FSM_interfaces; make test; ./bin/FSM_interfaces.exe; fi
+  - cd $MY_LOCATION; mkdir cmake_build; cd cmake_build
+  - cmake $QUICKY_REPOSITORY/FSM_interfaces
+  - make
+  - ./FSM_interfaces
+
 #EOF
