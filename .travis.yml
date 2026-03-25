@@ -12,8 +12,6 @@ matrix:
       sudo: required
       dist: bionic
       compiler: gcc
-    - os: osx
-      osx_image: xcode14.2
 
 language: cpp
 
@@ -35,7 +33,9 @@ before_install:
   - cd build
 
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then generate_makefile FSM_interfaces; make test; ./bin/FSM_interfaces.exe; fi
+  - generate_makefile FSM_interfaces
+  - make test
+  - ./bin/FSM_interfaces.exe
   - cd $MY_LOCATION; mkdir cmake_build; cd cmake_build
   - cmake $QUICKY_REPOSITORY/FSM_interfaces
   - make
